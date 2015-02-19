@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>What</title>
+</head>
+
+<body>
+    Hi, {{ user }}!
+
+    {% if products %}
+    <ul>
+        {% for product in products %}
+            <li>{{ product.title }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
