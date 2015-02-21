@@ -88,11 +88,11 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'auth_app.AuthAppShopUser'
 
 # Configure Shopify Application settings
-SHOPIFY_APP_NAME = 'Shopify App'
+SHOPIFY_APP_NAME = 'Twilio Product Notifier'
 SHOPIFY_APP_API_KEY = SHOPIFY_APP_API_KEY
 SHOPIFY_APP_API_SECRET = SHOPIFY_APP_API_SECRET
 SHOPIFY_APP_API_SCOPE = ['read_products', 'read_orders']
-SHOPIFY_APP_IS_EMBEDDED = True
+SHOPIFY_APP_IS_EMBEDDED = False
 SHOPIFY_APP_DEV_MODE = False
 
 # Use the Shopify Auth authentication backend as the sole authentication backend.
