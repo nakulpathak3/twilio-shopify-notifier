@@ -15,8 +15,11 @@ def home (request, *args, **kwargs):
         #orders = shopify.Order.find()
 
     for product in products:
-        if product.id == 41511613:
-            make_call()
+        i = 0;
+        for i in range(0, len(product.variants)):
+            if product.variants[i].inventory_management == "shopify" and product.variants[i].inventory_quantity < 10:
+                make_call()
+            i += 1
 
     return render(request, "shopify_app/home.html", {
         'products': products,

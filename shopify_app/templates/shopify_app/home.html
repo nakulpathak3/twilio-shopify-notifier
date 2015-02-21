@@ -12,7 +12,8 @@
     {% if products %}
     <ul>
         {% for product in products %}
-            <li>{{ product.variants.id }}</li>
+            <li>{{ product.variants.0.inventory_management }}</li>
+            <li>{{ product.variants.0.inventory_quantity }}</li>
         {% endfor %}
     </ul>
     {% endif %}
