@@ -8,22 +8,25 @@ from django.http import HttpResponse
 import json
 # Create your views here.
 
+@csrf_exempt
 @login_required
 def home (request, *args, **kwargs):
         #collect = shopify.Collect.find()
         #orders = shopify.Order.find()
 
     products = []
-
     import shopify
     with request.user.session:
         products = shopify.Product.find()
+        webhook_created = False
+        if not webhook_created:
+            shopify.Webhook.create({"topic": "orders/create", "address": "http://4f5bf394.ngrok.com/order_webhook/","format": "json"})
+            webhook_created = True
 
     for product in products:
         i = 0;
         for i in range(0, len(product.variants)):
             if product.variants[i].inventory_management == "shopify" and product.variants[i].inventory_quantity < 10:
-                print product.title.replace(" ","-")
                 make_call(product.title.replace(" ", "-"))
             i += 1
 
@@ -37,23 +40,18 @@ def home (request, *args, **kwargs):
 @login_required
 def webhook (request, *args, **kwargs):
     if request.method == "POST":
-
         products = []
-        print "I got here"
 
         import shopify
         with request.user.session:
             products = shopify.Product.find()
 
-        line_items = json.loads(request.body)["line_items"]
-        for i in range(0, len(line_items)):
-            print line_items[i]["variant_id"]
-
         for product in products:
             i = 0;
+            make_call("product")
             for i in range(0, len(product.variants)):
                 if (line_items[i]["variant_id"] == product.variants[i].id and product.variants[i].inventory_management == "shopify" and product.variants[i].inventory_quantity < 10):
-                    make_call()
+                    make_call(product.title.replace(" ", "-"))
 
         return HttpResponse(status=200)
 

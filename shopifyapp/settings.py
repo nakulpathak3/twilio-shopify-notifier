@@ -110,7 +110,7 @@ AUTH_USER_MODEL = 'auth_app.AuthAppShopUser'
 SHOPIFY_APP_NAME = 'Twilio Product Notifier'
 SHOPIFY_APP_API_KEY = SHOPIFY_APP_API_KEY
 SHOPIFY_APP_API_SECRET = SHOPIFY_APP_API_SECRET
-SHOPIFY_APP_API_SCOPE = ['read_products', 'read_orders']
+SHOPIFY_APP_API_SCOPE = ['read_products', 'read_orders', 'write_orders', 'write_fulfillments']
 SHOPIFY_APP_IS_EMBEDDED = False
 SHOPIFY_APP_DEV_MODE = False
 
