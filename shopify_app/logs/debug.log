@@ -1,332 +1,59 @@
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22, in home
-    print urllib2.urlopen('http://requestb.in/16x1uw11', urllib.urlencode(post_data))
-NameError: global name 'urllib2' is not defined
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22, in home
-    print urllib2.urlopen('http://requestb.in/16x1uw11', urllib.urlencode(post_data))
-NameError: global name 'urllib' is not defined
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
-    resolver_match = resolver.resolve(request.path_info)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 345, in resolve
-    sub_match = pattern.resolve(new_path)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
-    return ResolverMatch(self.callback, args, kwargs, self.name)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
-    self._callback = get_callable(self._callback_str)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
-    result = user_function(*args, **kwds)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
-    mod = import_module(mod_name)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
-    __import__(name)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22
-    post_data = {"topic": "orders/create", "address": "http://requestb.in/16x1uw11","format": "json"}}
-                                                                                                     ^
-SyntaxError: invalid syntax
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    print urllib2.urlopen('%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 396, in open
-    protocol = req.get_type()
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 258, in get_type
-    raise ValueError, "unknown url type: %s" % self.__original
-ValueError: unknown url type: nakuls-test-store.myshopify.com/admin/webhooks.json
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22, in home
-    print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 410, in open
-    response = meth(req, response)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 523, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 448, in error
-    return self._call_chain(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
-    result = func(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 531, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 403: Forbidden
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 410, in open
-    response = meth(req, response)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 523, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 448, in error
-    return self._call_chain(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
-    result = func(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 531, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 403: Forbidden
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 24, in home
-    print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 410, in open
-    response = meth(req, response)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 523, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 448, in error
-    return self._call_chain(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
-    result = func(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 531, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 403: Forbidden
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 410, in open
-    response = meth(req, response)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 523, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 448, in error
-    return self._call_chain(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
-    result = func(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 531, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 403: Forbidden
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 20, in home
-    products = shopify.Product.find()
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/pyactiveresource/activeresource.py", line 385, in find
-    return cls._find_every(from_=from_, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/pyactiveresource/activeresource.py", line 523, in _find_every
-    return cls._build_list(cls.connection.get(path, cls.headers),
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/pyactiveresource/connection.py", line 329, in get
-    return self.format.decode(self._open('GET', path, headers=headers).body)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify/base.py", line 23, in _open
-    self.response = super(ShopifyConnection, self)._open(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/pyactiveresource/connection.py", line 288, in _open
-    http_response = self._handle_error(err)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/pyactiveresource/connection.py", line 404, in _handle_error
-    raise UnauthorizedAccess(err)
-UnauthorizedAccess: Response(code=401, body="{"errors":"[API] Invalid API key or access token (unrecognized login or wrong password)"}", headers={'status': '401 Unauthorized', 'x-request-id': '7a110483-7d78-4b16-8048-73ab0b2d81b9', 'x-sorting-hat-shopid': '7589297', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'set-cookie': '_secure_admin_session_id=05eebe9f3c77e55df38e87490c0375c0; path=/; secure; HttpOnly', 'x-sorting-hat-podid': '0', 'server': 'nginx', 'x-shopid': '7589297', 'connection': 'close', 'x-sorting-hat-shopid-cached': '1', 'x-xss-protection': '1; mode=block; report=/xss-report/7a110483-7d78-4b16-8048-73ab0b2d81b9?source%5Baction%5D=index&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin', 'date': 'Sun, 22 Feb 2015 08:47:12 GMT', 'x-shardid': '0', 'x-sorting-hat-podid-cached': '1', 'content-type': 'application/json; charset=utf-8', 'www-authenticate': 'Basic Realm="Shopify API Authentication"'}, msg="Unauthorized")
 Not Found: /favicon.ico
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22, in home
-    print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 127, in urlopen
-    return _opener.open(url, data, timeout)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 410, in open
-    response = meth(req, response)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 523, in http_response
-    'http', request, response, code, msg, hdrs)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 448, in error
-    return self._call_chain(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 382, in _call_chain
-    result = func(*args)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 531, in http_error_default
-    raise HTTPError(req.get_full_url(), code, msg, hdrs, fp)
-HTTPError: HTTP Error 403: Forbidden
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 21, in home
-    webhook.create({"topic": "orders/create", "address": "http://requestb.in/16x1uw11","format": "json"})
-AttributeError: 'function' object has no attribute 'create'
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 22, in home
-    print shopify.Webhook.find().items()
-AttributeError: 'list' object has no attribute 'items'
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 20, in home
-    shopify.Product.create()
-TypeError: create() takes exactly 2 arguments (1 given)
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 21, in home
-    webhook_created = false
-NameError: global name 'false' is not defined
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    webhook.delete()
-AttributeError: 'list' object has no attribute 'delete'
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    webhook.remove()
-TypeError: remove() takes exactly one argument (0 given)
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    webhook.remove(webhook)
-ValueError: list.remove(x): x not in list
-Internal Server Error: /
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 23, in home
-    webhook.remove(webhook.id)
-AttributeError: 'list' object has no attribute 'id'
 Internal Server Error: /order_webhook/
 Traceback (most recent call last):
   File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
     return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 52, in webhook
-    print json.loads(request.body)["line_items"]
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
-    return _default_decoder.decode(s)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 368, in decode
-    raise ValueError(errmsg("Extra data", s, end, len(s)))
-ValueError: Extra data: line 27 column 1 - line 27 column 2 (char 447 - 448)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 50, in webhook
+    user = user_model.objects.get(domain = request.META['HTTP_X_SHOPIFY_SHOP_DOMAIN'])
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 345, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 691, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 709, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1331, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1358, in _add_q
+    current_negated=current_negated, connector=connector)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1182, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1120, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1427, in names_to_path
+    self.raise_field_error(opts, name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1433, in raise_field_error
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'domain' into field. Choices are: id, last_login, logentry, myshopify_domain, password, token
 Internal Server Error: /order_webhook/
 Traceback (most recent call last):
   File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
     return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 52, in webhook
-    print json.loads(request.body)["line_items"]
-KeyError: 'line_items'
-Internal Server Error: /order_webhook/
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 56, in webhook
-    print line_items[i]["variant_id"]
-KeyError: 'variant_id'
-Internal Server Error: /order_webhook/
-Traceback (most recent call last):
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
-    return view_func(*args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/shopify_auth/decorators.py", line 44, in wrapper
-    return f(request, *args, **kwargs)
-  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 52, in webhook
-    print json.loads(request.body)["order"]["line_items"]
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py", line 338, in loads
-    return _default_decoder.decode(s)
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 365, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/decoder.py", line 381, in raw_decode
-    obj, end = self.scan_once(s, idx)
-ValueError: Expecting property name: line 10 column 7 (char 193)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 50, in webhook
+    user = user_model.objects.get(domain = request.META['HTTP_X_SHOPIFY_SHOP_DOMAIN'])
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 345, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 691, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/query.py", line 709, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1331, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1358, in _add_q
+    current_negated=current_negated, connector=connector)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1182, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1120, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1427, in names_to_path
+    self.raise_field_error(opts, name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1433, in raise_field_error
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'domain' into field. Choices are: id, last_login, logentry, myshopify_domain, password, token

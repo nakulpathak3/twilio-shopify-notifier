@@ -3,9 +3,10 @@ from shopify_auth.decorators import login_required, anonymous_required
 from twilio.rest import TwilioRestClient
 import twilio.twiml
 from making_call import make_call
+from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-import json
+import json, shopify
 # Create your views here.
 
 @csrf_exempt
@@ -15,13 +16,14 @@ def home (request, *args, **kwargs):
         #orders = shopify.Order.find()
 
     products = []
-    import shopify
     with request.user.session:
         products = shopify.Product.find()
         webhook_created = False
         if not webhook_created:
             shopify.Webhook.create({"topic": "orders/create", "address": "http://4f5bf394.ngrok.com/order_webhook/","format": "json"})
             webhook_created = True
+        #post_data = {"topic": "orders/create", "address": "http://requestb.in/16x1uw11","format": "json"}
+        #print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
 
     for product in products:
         i = 0;
@@ -37,14 +39,22 @@ def home (request, *args, **kwargs):
         })
 
 @csrf_exempt
-@login_required
 def webhook (request, *args, **kwargs):
     if request.method == "POST":
+        print "What"
         products = []
 
-        import shopify
-        with request.user.session:
+        user_model = get_user_model()
+
+        try:
+            user = user_model.objects.get(myshopify_domain = request.META['HTTP_X_SHOPIFY_SHOP_DOMAIN'])
+        except user_model.DoesNotExist:
+            return HttpResponse(status = 400)
+
+        with user.session:
             products = shopify.Product.find()
+
+        line_items = json.loads(request.body)["line_items"]
 
         for product in products:
             i = 0;
