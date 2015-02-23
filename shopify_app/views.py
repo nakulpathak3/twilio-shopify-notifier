@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 import json, shopify, twilio.twiml
-from django import forms
+
 # Create your views here.
 
 #Problems:
@@ -50,6 +50,7 @@ def webhook (request, *args, **kwargs):
         user_model = get_user_model()
 
         try:
+            # Fetch shop domain from request header
             user = user_model.objects.get(myshopify_domain = request.META['HTTP_X_SHOPIFY_SHOP_DOMAIN'])
         except user_model.DoesNotExist:
             return HttpResponse(status = 400)
