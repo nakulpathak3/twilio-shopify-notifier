@@ -8,5 +8,6 @@ def make_call(product_name=""):
 
     call = client.calls.create(to="+12268688127",
                            from_="+12268940236",
+                           IfMachine="Continue",
                            url=call_url)
     print(call.sid)

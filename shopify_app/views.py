@@ -1,47 +1,50 @@
 from django.shortcuts import render
 from shopify_auth.decorators import login_required, anonymous_required
 from twilio.rest import TwilioRestClient
-import twilio.twiml
 from making_call import make_call
+from sending_sms import send_text
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-import json, shopify
+import json, shopify, twilio.twiml
+from django import forms
 # Create your views here.
 
-@csrf_exempt
+#Problems:
+# 1. If 2 or more line items in order that have inventory less than 10, you'll get two consecutive calls
+# 2. Voice mail? Send a text as well? - DONE.
+# 3. Inventory not tracked, app will be useless to customer.
+# 4. If guy cancels order, no webhook for that and inventory goes above 10, should probably call customer
+# 5. Let the user decide when to call
+# 6. if csalled once, dont call everytime it goes below 10
+# 7. Separate for all products
+# 8. Give option to receive call/text
+# 9. Which item from inventory are you talking about bro?
+
 @login_required
 def home (request, *args, **kwargs):
-        #collect = shopify.Collect.find()
-        #orders = shopify.Order.find()
 
     products = []
     with request.user.session:
         products = shopify.Product.find()
-        webhook_created = False
-        if not webhook_created:
-            shopify.Webhook.create({"topic": "orders/create", "address": "http://4f5bf394.ngrok.com/order_webhook/","format": "json"})
-            webhook_created = True
-        #post_data = {"topic": "orders/create", "address": "http://requestb.in/16x1uw11","format": "json"}
-        #print urllib2.urlopen('http://%s/admin/webhooks.json' % request.user, urllib.urlencode(post_data))
 
-    for product in products:
-        i = 0;
-        for i in range(0, len(product.variants)):
-            if product.variants[i].inventory_management == "shopify" and product.variants[i].inventory_quantity < 10:
-                make_call(product.title.replace(" ", "-"))
-            i += 1
+        webhook_created = False
+
+        if not webhook_created:
+            shopify.Webhook.create({
+                "topic": "orders/create",
+                "address": "https://nakul-shopify.ngrok.com/webhook_created/",
+                "format": "json"})
 
     return render(request, "shopify_app/home.html", {
         'products': products,
-        #'collect': collect,
-        #'orders': orders,
         })
+
+called_once = False
 
 @csrf_exempt
 def webhook (request, *args, **kwargs):
     if request.method == "POST":
-        print "What"
         products = []
 
         user_model = get_user_model()
@@ -58,11 +61,17 @@ def webhook (request, *args, **kwargs):
 
         for product in products:
             i = 0;
-            make_call("product")
             for i in range(0, len(product.variants)):
-                if (line_items[i]["variant_id"] == product.variants[i].id and product.variants[i].inventory_management == "shopify" and product.variants[i].inventory_quantity < 10):
-                    make_call(product.title.replace(" ", "-"))
 
+                if (line_items[i]["variant_id"] == product.variants[i].id
+                        and product.variants[i].inventory_management == "shopify"
+                        and product.variants[i].inventory_quantity < 10):
+
+                    make_call(product.title.replace(" ", "-"))
+                    send_text(product.title.replace(" ", "-"))
+
+        called_once = True # If I called when inventory was at 9, no need to call again and again as it
+        # goes down
         return HttpResponse(status=200)
 
     elif request.method == "GET":
@@ -73,10 +82,6 @@ def twilio_call(request, product_name=""):
     resp = twilio.twiml.Response()
     resp.say("Hello, your product %s has less than 10 items left in inventory." % product_name)
     return HttpResponse(str(resp))
-# The problem is that I want to access the products in a client's store when a webhook comes in
-# The thing is I can't ask the webhook to login
-# But if the user has already logged in and has the app installed, shouldn't it not matter?
-# Assuming it doesn't matter, once I get the product
 
 # Client ID = f5ce9a546ecb08809ff2516679be471e
 

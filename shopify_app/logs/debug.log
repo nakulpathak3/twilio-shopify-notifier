@@ -57,3 +57,51 @@ Traceback (most recent call last):
   File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1433, in raise_field_error
     "Choices are: %s" % (name, ", ".join(available)))
 FieldError: Cannot resolve keyword 'domain' into field. Choices are: id, last_login, logentry, myshopify_domain, password, token
+Not Found: /favicon.ico
+Internal Server Error: /order_webhook/
+Traceback (most recent call last):
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 345, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 5, in <module>
+    from making_call import make_call
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/making_call.py", line 11
+SyntaxError: Non-ASCII character '\xe2' in file /Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/making_call.py on line 11, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Internal Server Error: /order_webhook/
+Traceback (most recent call last):
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/handlers/base.py", line 98, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 345, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 224, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 231, in callback
+    self._callback = get_callable(self._callback_str)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/utils/lru_cache.py", line 101, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/lib/python2.7/site-packages/django/core/urlresolvers.py", line 97, in get_callable
+    mod = import_module(mod_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/views.py", line 5, in <module>
+    from making_call import make_call
+  File "/Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/making_call.py", line 11
+SyntaxError: Non-ASCII character '\xe2' in file /Users/nakulpathak/Documents/Projects/shopify-app/shopify_app/making_call.py on line 11, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Not Found: /favicon.ico
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
