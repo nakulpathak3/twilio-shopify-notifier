@@ -5,3 +5,4 @@ class ShopOwnerForm(forms.ModelForm):
 
     class Meta:
         model = ProductPreferencesModel
+        exclude = ('product_id',)

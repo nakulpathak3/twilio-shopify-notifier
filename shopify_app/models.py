@@ -7,6 +7,7 @@ class ShopifyAppShopUser(AbstractShopUser):
     pass
 
 class ProductPreferencesModel(models.Model):
+    product_id = models.IntegerField(validators=[MinValueValidator(0)])
     min_quantity = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100000)], blank=True, default=10)
     text = models.BooleanField(default=False)
     call = models.BooleanField(default=False)

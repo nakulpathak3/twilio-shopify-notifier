@@ -9,6 +9,8 @@
     <h1> Hi, {{ user }}! </h1>
 
     <h3> Products </h3>
+    <form>
+    {{ form.as_p }}
     {% if products %}
     <ul>
         {% for product in products %}
@@ -17,22 +19,9 @@
         {% endfor %}
     </ul>
     {% endif %}
-<!--
-    {% if collect %}
-    <ul>
-        {% for col in collect %}
-            <li>{{ col.collection_id }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    </form>
 
-    {% if orders %}
-    <ul>
-        {% for order in orders %}
-            <li>{{ order.anything }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
--->
+
+
 </body>
 </html>

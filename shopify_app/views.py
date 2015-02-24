@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from shopify_auth.decorators import login_required, anonymous_required
 from twilio.rest import TwilioRestClient
-from making_call import make_call
-from sending_sms import send_text
+from helpers.making_call import make_call
+from helpers.sending_sms import send_text
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -20,6 +20,8 @@ import json, shopify, twilio.twiml
 # 7. Separate for all products
 # 8. Give option to receive call/text
 # 9. Which item from inventory are you talking about bro?
+# 10. What if 1000 requests a second? Handle them.
+
 
 @login_required
 def home (request, *args, **kwargs):
@@ -45,6 +47,7 @@ called_once = False
 @csrf_exempt
 def webhook (request, *args, **kwargs):
     if request.method == "POST":
+
         products = []
 
         user_model = get_user_model()
@@ -52,6 +55,7 @@ def webhook (request, *args, **kwargs):
         try:
             # Fetch shop domain from request header
             user = user_model.objects.get(myshopify_domain = request.META['HTTP_X_SHOPIFY_SHOP_DOMAIN'])
+
         except user_model.DoesNotExist:
             return HttpResponse(status = 400)
 
@@ -83,6 +87,4 @@ def twilio_call(request, product_name=""):
     resp = twilio.twiml.Response()
     resp.say("Hello, your product %s has less than 10 items left in inventory." % product_name)
     return HttpResponse(str(resp))
-
-# Client ID = f5ce9a546ecb08809ff2516679be471e
 
