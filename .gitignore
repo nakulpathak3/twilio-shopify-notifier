@@ -1,5 +1,6 @@
 bin
 include
 lib
+shopify_app/secret.py
 shopifyapp/secret.py
 *.pyc
